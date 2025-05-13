@@ -46,3 +46,27 @@ Test your new function; I've provided some basic testing code in `code.test.js`.
 What is the worst-case asymptotic time complexity of your implementation? What
 is the worst-case asymptotic memory complexity? Add your answer, including your
 reasoning, to this markdown file.
+
+Runtime Analysis:
+- number of cities (vertices): n
+- subsets of cities: $(2^n)$
+- cost for each possible ending city: n $\times 2^n$
+- iterate over up to n possible previous cities: $\Theta$(n)
+
+time complexity: $\Theta(n \times 2^n)$ subproblems $\times \Theta(n)$ work per subproblem = $\Theta(n^2 \times 2^n)$
+
+Memory Analysis:
+- subsets of cities: $2^n$
+- choices for the ending city: n
+Total entries stored: $\Theta(n \times 2^n)$
+
+The worst-case time complexity is $\Theta(n^2 \times 2^n)$, where n is the number of cities. This results from calculating the shortest path for each subset of cities ending at each possible last city. There are $\Theta(n × 2^n)$ subproblems, and each takes up to $\Theta(n)$ time to solve, contributing to the overall complexity. The worst-case memory is $\Theta(n \times 2^n)$ due to memoizing each subset-city pair.
+
+
+“I certify that I have listed all sources used to complete this exercise, including the use
+of any Large Language Models. All of the work is my own, except where stated
+otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is
+suspected, charges may be filed against me without prior notice.”
+
+
+For this assignment, I asked Chat GPT for help with troubleshooting issues with my code, as well as help with articulating my reasoning. I also used the website (upyesp)[https://www.upyesp.org/posts/makrdown-vscode-math-notation/] as a quick guide for adding mathematical expressions.
